@@ -452,6 +452,7 @@ func (p *fwprovider) Resources(ctx context.Context) []func() resource.Resource {
 // the Metadata method. All functions must have unique names.
 func (p *fwprovider) Functions(_ context.Context) []func() function.Function {
 	return []func() function.Function{
+		tffunction.NewARNBuildFunction,
 		tffunction.NewARNParseFunction,
 	}
 }
